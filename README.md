@@ -11,18 +11,19 @@ php artisan test
 ```
 
 # Regarding the completeness of the use cases
-I only did the "create campaign" and "get campaigns" cases, the latter in less degree of completeness than desired.
-I opted to focus on architecture. The missing features are quite trivial, 
-but the fundamental structure is what makes software be software (malleable) as opposed to hardware.
-Of course this consideration is not relevant for this trow-away exercise, but that how I approached it:
+I only did the "create campaign" and "get campaigns" cases, the latter in less degree of completeness than specced.
+I opted to focus on architecture. The missing features are quite trivial, but I assume you want to know how I think about
+software, so this is where the focus is.
 
 # Regarding the fundamental principles
+## A brief overview of Clean Architecture
 Generally the result is a simplified implementation of the Clean/Onion/Hexagonal Architecture.
 The main idea behind these terms is the separation of software in layers, each layer having its own responsibility
 while being unaware of the internal workings, or even the existence of other layers. Examples of layers are:
-- The I/O layer. It gets input and outputs output in any way its nature allows. Peripheral to the actual system.
-- The Domain Model. In the Heart of te system.
-- The Use Cases (abbreviated to UCs from now on) that the system should be doing. In the Heart of te system.
+- The I/O layer. It gets input and outputs output in any way its nature allows. 
+  Peripheral to the actual system. Examples: Web, Console.
+- The Domain Model. In the Heart of the system.
+- The Use Cases (abbreviated to UCs from now on) that the system should be doing. In the Heart of the system.
 - Low-level Services that implement specific functionalities. Examples are: Cache, FileSystem. Peripheral to the actual system.
 
 When we make something using this approach:
@@ -32,6 +33,7 @@ so that one layers' details or vocabulary do not leak into another.
  - The mechanism by which we achieve it is Inversion of Control, Interfaces, and translating data from one layer's 
    representation to another's.
 
+## A guide through the implementation of these ideas in this solution
 Now, to the solution.
 * High level logic of each flow:
     - The I/O layer is the usual Laravel Controller. It collects input from the Request,
