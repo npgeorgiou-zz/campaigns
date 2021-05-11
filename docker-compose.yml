@@ -43,7 +43,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: xrequests
+      MYSQL_DATABASE: accutics
       MYSQL_ROOT_PASSWORD: password
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
@@ -62,7 +62,7 @@ services:
     ports:
       - "3307:3306"
     environment:
-      MYSQL_DATABASE: xrequests
+      MYSQL_DATABASE: accutics
       MYSQL_ROOT_PASSWORD: password
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
