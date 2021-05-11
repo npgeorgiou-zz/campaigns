@@ -48,7 +48,7 @@ Now, to the solution.
       
 
 * Observe how everything related to what we need to do is isolated from the framework in its own directory (/accutics).
-  In there we have build owr own word.
+  In there we have build our own world.
     - Our Domain Model (Separate from Eloquent's Domain Model, we use the framework, not marry it.)
     - Our Use Cases.
     - The Errors our UCs might produce.
@@ -59,7 +59,7 @@ Now, to the solution.
     - Cases do not return Laravel Responses
     - Nothing in our world knows anything about Laravel and Eloquent, and definitely nothing about a database or any 
       other storage mechanism.
-    - Repositories do not expose their implementation in their API. They do not accept nor return Eloquent Models. 
+    - Repository Services do not expose their implementation in their API. They do not accept nor return Eloquent Models. 
       They use them in their internal implementations, but their API deals only with Accutics Models.
 
 * We have managed to isolate the real thing our system does (the what) from the framework/tools (the how).
