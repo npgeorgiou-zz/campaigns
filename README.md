@@ -4,7 +4,7 @@ docker-compose up
 ```
 In a new console tab
 ```
-docker-compose exec php bash
+docker-compose exec app bash
 composer install
 php artisan test
 ```
