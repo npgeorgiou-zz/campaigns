@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/laravel-vue-seeder.iml" filepath="$PROJECT_DIR$/.idea/laravel-vue-seeder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../xrequests/.idea/prop.iml" filepath="$PROJECT_DIR$/../xrequests/.idea/prop.iml" />
+    </modules>
+  </component>
+</project>
