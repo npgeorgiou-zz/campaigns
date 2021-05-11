@@ -1,7 +1,8 @@
 # Run the tests
 ```
-docker-compose up
+docker-compose build && docker-compose up
 ```
+
 In a new console tab
 ```
 docker-compose exec app bash
@@ -25,7 +26,7 @@ while being unaware of the internal workings, or even the existence of other lay
 - Low-level Services that implement specific functionalities. Examples are: Cache, FileSystem. Peripheral to the actual system.
 
 When we make something using this approach:
-- The practical benefits are modularity, replaceability, testability, clear boundaries, etch.
+- The practical benefits are modularity, interchangeability, testability, clear boundaries, etch.
 - The overhead is constant attention on where stuff belong, and how information gets transferred across boundaries 
 so that one layers' details or vocabulary do not leak into another.
  - The mechanism by which we achieve it is Inversion of Control, Interfaces, and translating data from one layer's 
