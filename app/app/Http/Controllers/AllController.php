@@ -13,16 +13,16 @@ use function Accutics\Core\Cases\create_campaign;
 use function Accutics\Core\Cases\get_campaigns;
 
 class AllController extends Controller {
-    public function create_campaign(Request $campaign, UserRepository $userRepository, CampaignRepository $campaignRepository) {
+    public function create_campaign(Request $request, UserRepository $userRepository, CampaignRepository $campaignRepository) {
         try {
             $campaign = create_campaign(
                 $userRepository,
                 $campaignRepository,
-                $campaign->input('user_email'),
-                $campaign->input('name'),
-                $campaign->input('source'),
-                $campaign->input('channel'),
-                $campaign->input('target_url')
+                $request->input('user_email'),
+                $request->input('name'),
+                $request->input('source'),
+                $request->input('channel'),
+                $request->input('target_url')
             );
 
             return response()->json($campaign);
@@ -37,12 +37,12 @@ class AllController extends Controller {
         }
     }
 
-    public function get_campaigns(Request $campaigns, CampaignRepository $campaignRepository) {
+    public function get_campaigns(Request $request, CampaignRepository $campaignRepository) {
         try {
             $campaigns = get_campaigns(
                 $campaignRepository,
-                $campaigns->input('page'),
-                $campaigns->input('size')
+                $request->input('page'),
+                $request->input('size')
             );
 
             return response()->json($campaigns);
